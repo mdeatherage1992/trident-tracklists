@@ -1,5 +1,5 @@
 class Api::TracklistsController < ApplicationController
-before_action :set_surfboard, only: [:show,:edit,:destroy]
+before_action :set_tracklist, only: [:show,:edit,:destroy]
   def index
     render json: Tracklist.all
   end
@@ -9,7 +9,7 @@ before_action :set_surfboard, only: [:show,:edit,:destroy]
     if tracklist.save
       render json: tracklist
     else
-      render json: {message: surfboard.errors}, status: 400
+      render json: {message: tracklist.errors}, status: 400
   end
 end
 
@@ -17,7 +17,7 @@ def update
   if @tracklist.update(tracklist_params)
     render json: @tracklist
   else
-    render json: {message: surfboard.errors}, status: 400
+    render json: {message: tracklist.errors}, status: 400
   end
 end
 
@@ -25,9 +25,9 @@ def destroy
   if @tracklist.destroy
     render status: 204
   else
-    render json: {message: surfboard.errors}, status: 400
+    render json: {message: @tracklist.errors}, status: 400
   end
-end 
+end
   def show
     render json: Tracklist.find_by(id: params[:id])
   end
