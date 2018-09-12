@@ -7,11 +7,16 @@
   height: 80px;
 }
 
+* {color: #49fb35;
+background: black;
+font-family: 'Futura';
+}
+
 .App-header {
-  background-color: #222;
+  /* background-color: #222; */
   height: 150px;
   padding: 20px;
-  color: white;
+  /* color: white; */
 }
 
 .App-title {

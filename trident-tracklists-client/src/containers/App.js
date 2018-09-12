@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Tracklists from './Tracklists';
 import './App.css';
+import './Tracklists.css';
 
 const tracklists = [
   {
