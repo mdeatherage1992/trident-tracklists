@@ -1,10 +1,5 @@
 .tracklistCard {
   border-style: groove;
   border-color: #49fb35;
-}
-
-* {
-  color: #49fb35;
-  background: black;
-  font-family: 'Futura';
+  font-family: 'Typewriter, serif';
 }
