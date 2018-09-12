@@ -1,12 +1,27 @@
 import React, {Component} from 'react';
-import './App.css'
+import Tracklists from './Tracklists';
+import './App.css';
 
+const tracklists = [
+  {
+  title: "new Tracks",
+   url: "link.io",
+   genre: "Techno",
+   tracklist: "new stuff"
+},
+{
+  title: "old Tracks",
+   url: "links.io",
+   genre: "Deep",
+   tracklist: "new tunes"
+}
+]
 
 class App extends Component {
   render () {
     return (
-      <div>
-      App Container
+      <div className="App">
+      <Tracklists tracklists={tracklists} />
       </div>
     );
   }
