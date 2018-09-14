@@ -22,25 +22,15 @@ import './Tracklists.css';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      tracklists: []
-
-    }
-  }
-
   componentDidMount() {
     fetch('http://localhost:3001/api/tracklists')
     .then(response => response.json())
-    .then(tracklists => this.setState({tracklists}))
+    // .then(tracklists => this.setState({tracklists}))
   }
   render () {
-    console.log(this.state)
     return (
       <div className="App">
-      <Tracklists tracklists={this.state.tracklists} />
+      <Tracklists />
       </div>
     );
   }

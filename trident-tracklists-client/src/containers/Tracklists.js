@@ -1,8 +1,18 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux'
 import './Tracklists.css';
 import TracklistCard from '../component/TracklistCard';
 import TracklistForm from './TracklistForm';
 class Tracklists extends Component {
+
+  componentDidMount() {
+    this.props.dispatch({
+      type:'GET_TRACKLISTS_SUCCESS',
+      tracklists: [{title: "new Title", url:"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/493745535&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+      tracklist: "[01]Paul-Wall[02]Rae-Jon", Genre: "Techno"}]
+    })
+  }
+
 
   render () {
     return (
@@ -16,8 +26,12 @@ class Tracklists extends Component {
     );
   }
 }
-
-export default Tracklists;
+const mapStateToProps = (state) => {
+  return ({
+    tracklists: state.tracklists
+  })
+}
+export default connect(mapStateToProps)(Tracklists);
 
 
 // <div className="tracklistCard">
