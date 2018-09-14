@@ -47,3 +47,20 @@ class App extends Component {
 }
 
 export default App;
+
+// var collection = {
+//   tracklists: [
+//
+//   ],
+//   tracklistFormData: [
+//     {
+//       title:
+//       url:
+//       genre:
+//       tracklist:
+//     }
+//   ],
+//   currentTracklist: {
+//
+//   }
+// }
