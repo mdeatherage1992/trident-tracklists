@@ -1,16 +1,21 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './Tracklists.css';
-import TracklistCard from '../component/TracklistCard'
+import TracklistCard from '../component/TracklistCard';
+import TracklistForm from './TracklistForm';
+class Tracklists extends Component {
 
-const Tracklists = (props) => (
+  render () {
+    return (
 <div className="TracklistsContainer">
 <h1> Tracklists</h1>
-{props.tracklists.map(tracklist =>
+{this.props.tracklists.map(tracklist =>
+  <TracklistCard key={tracklist.id}tracklist={tracklist} />)}
 
-  <TracklistCard tracklist={tracklist} />)}
-
+  <TracklistForm />
 </div>
-);
+    );
+  }
+}
 
 export default Tracklists;
 
