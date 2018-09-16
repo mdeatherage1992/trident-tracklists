@@ -3,15 +3,12 @@ import { connect } from 'react-redux'
 import './Tracklists.css';
 import TracklistCard from '../component/TracklistCard';
 import TracklistForm from './TracklistForm';
+import {getTracklists} from '../actions/tracklists';
 class Tracklists extends Component {
 
-  componentDidMount() {
-    this.props.dispatch({
-      type:'GET_TRACKLISTS_SUCCESS',
-      tracklists: [{title: "new Title", url:"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/493745535&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
-      tracklist: "[01]Paul-Wall[02]Rae-Jon", Genre: "Techno"}]
-    })
-  }
+componentDidMount() {
+  this.props.getTracklists()
+}
 
 
   render () {
@@ -31,7 +28,7 @@ const mapStateToProps = (state) => {
     tracklists: state.tracklists
   })
 }
-export default connect(mapStateToProps)(Tracklists);
+export default connect(mapStateToProps, {getTracklists})(Tracklists);
 
 
 // <div className="tracklistCard">
@@ -42,3 +39,11 @@ export default connect(mapStateToProps)(Tracklists);
 //
 // </div>
 // )}
+
+// componentDidMount() {
+//   this.props.dispatch({
+//     type:'GET_TRACKLISTS_SUCCESS',
+//     tracklists: [{title: "new Title", url:"https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/493745535&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true",
+//     tracklist: "[01]Paul-Wall[02]Rae-Jon", Genre: "Techno"}]
+//   })
+// }

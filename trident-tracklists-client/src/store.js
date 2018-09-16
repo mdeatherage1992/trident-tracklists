@@ -4,29 +4,23 @@ import {
   combineReducers
 } from 'redux';
 import thunk from 'redux-thunk';
+import tracklists from './reducers/tracklists'
 
-const tracklistsReducer = (state = [], action) => {
-  switch(action.type) {
-    case 'GET_TRACKLISTS_SUCCESS':
-    return action.tracklists;
-
-    default:
-    return state;
-  }
-}
 
 
 const reducers = combineReducers({
-  tracklists: tracklistsReducer
+  tracklists
 });
+
+// : tracklistsReducer
+
 
 const middleware = [thunk]
 
 export default createStore(
   reducers,
-  applyMiddleware(...middleware),
-  window._REDUX_DEVTOOLS_EXTENSION_ && window._REDUX_DEVTOOLS_EXTENSION_()
-)
+  window._REDUX_DEVTOOLS_EXTENSION_ && window._REDUX_DEVTOOLS_EXTENSION_(), applyMiddleware(...middleware),
+);
 
 
 

@@ -3,6 +3,7 @@ import Tracklists from './Tracklists';
 import './App.css';
 import './Tracklists.css';
 
+
 // const tracklists = [
 //   {
 //   title: "new Tracks",
@@ -22,11 +23,6 @@ import './Tracklists.css';
 
 class App extends Component {
 
-  componentDidMount() {
-    fetch('http://localhost:3001/api/tracklists')
-    .then(response => response.json())
-    // .then(tracklists => this.setState({tracklists}))
-  }
   render () {
     return (
       <div className="App">
@@ -54,3 +50,8 @@ export default App;
 //
 //   }
 // }
+
+
+// fetch('http://localhost:3001/api/tracklists')
+// .then(response => response.json())
+// // .then(tracklists => this.setState({tracklists}))
