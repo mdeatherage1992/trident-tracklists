@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import {updateTracklistFormData } from '../actions/tracklistForm'
-import {createTracklist} from '../actions/tracklists'
+import {updateTracklistFormData } from '../actions/tracklistForm';
+import {createTracklist} from '../actions/tracklists';
 
 
 class TracklistForm extends Component {
@@ -81,4 +81,7 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {updateTracklistFormData})(TracklistForm);
+export default connect(mapStateToProps,{
+   updateTracklistFormData,
+   createTracklist
+ })(TracklistForm);

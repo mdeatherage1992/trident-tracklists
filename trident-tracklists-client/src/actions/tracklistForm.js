@@ -6,3 +6,9 @@ export const updateTracklistFormData = tracklistFormData => {
     tracklistFormData
   }
 }
+
+export const resetTracklistForm = () => {
+  return {
+    type: 'RESET_TRACKLIST_FORM'
+  }
+}

@@ -1,12 +1,17 @@
-export default(state = {
-    title: '',
-    url: '',
+const initialState = {
+  title: '',
+  url: '',
   genre: '',
-tracklist: '',
-}, action) => {
+  tracklist: ''
+  }
+
+export default(state = initialState, action) => {
   switch(action.type) {
     case 'UPDATED_DATA':
-    return action.tracklistFormData
+    return action.tracklistFormData;
+
+    case 'RESET_TRACKLIST_FORM':
+      return initialState;
 
     default:
     return state;

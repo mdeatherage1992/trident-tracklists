@@ -1,4 +1,4 @@
-
+import {resetTracklistForm} from './tracklistForm';
 const setTracklists = tracklists => {
   return {
     type: 'GET_TRACKLISTS_SUCCESS',
@@ -6,6 +6,12 @@ const setTracklists = tracklists => {
   }
 }
 
+const addTracklist = tracklist => {
+  return {
+    type:'CREATE_TRACKLIST_SUCCESS',
+    tracklist
+  }
+}
 
 export const getTracklists = () => {
   return dispatch => {
@@ -23,11 +29,13 @@ export const createTracklist = tracklist => {
       headers: {
         'Content-Type': 'application/json'
       },
-      data: JSON.stringify(tracklist)
+      body: JSON.stringify({tracklist: tracklist })
     })
     .then(response => response.json())
-    .then(response => {
-      debugger})
+    .then(tracklist => {
+      dispatch(addTracklist(tracklist))
+      dispatch(resetTracklistForm())
+    })
     .catch(err => console.log(err))
   }
 }
