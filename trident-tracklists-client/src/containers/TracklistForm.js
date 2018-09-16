@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {updateTracklistFormData } from '../actions/tracklistForm'
+import {createTracklist} from '../actions/tracklists'
+
+
 class TracklistForm extends Component {
 
   handleOnChange = event => {
@@ -11,13 +14,18 @@ class TracklistForm extends Component {
     this.props.updateTracklistFormData(currentTracklistFormData)
   }
 
+  handleOnSubmit = event => {
+    event.preventDefault()
+    this.props.createTracklist(this.props.tracklistFormData)
+  }
+
 
   render() {
     const {title,url,genre,tracklist} = this.props.tracklistFormData
     return (
       <div>
       Add a Tracklist
-      <form>
+      <form onSubmit={this.handleOnSubmit}>
       <div className="inputs">
       <label htmlFor="name">Name:</label>
 
@@ -60,6 +68,7 @@ class TracklistForm extends Component {
         />
 
         </div>
+        <button type="submit">Add Tracklist</button>
       </form>
       </div>
     )
