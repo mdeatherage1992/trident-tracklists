@@ -27,6 +27,7 @@ export const createTracklist = tracklist => {
     return fetch('http://localhost:3001/api/tracklists', {
       method: 'POST',
       headers: {
+        'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({tracklist: tracklist })

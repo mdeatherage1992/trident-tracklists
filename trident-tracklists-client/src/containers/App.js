@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import Tracklists from './Tracklists';
 import './App.css';
 import './Tracklists.css';
-import Auth from '../modules/Auth'
-
-import {BrowserRouter as Router,Link,Redirect, Route} from 'react-router-dom';
+// import Auth from '../modules/Auth'
+//
+// import {BrowserRouter as Router,Link,Redirect, Route} from 'react-router-dom';
 
 // const tracklists = [
 //   {
@@ -25,20 +25,20 @@ import {BrowserRouter as Router,Link,Redirect, Route} from 'react-router-dom';
 
 class App extends Component {
 
-    constructor() {
-      super();
-      this.state = {
-        auth: Auth.isUserAuthenticated(),
-      }
-    }
+    // constructor() {
+    //   super();
+    //   this.state = {
+    //     auth: Auth.isUserAuthenticated(),
+    //   }
+    // }
 
   render () {
     return (
-      <Router>
+      // <Router>
       <div className="App">
       <Tracklists />
       </div>
-      </Router>
+      // </Router>
     );
   }
 }
