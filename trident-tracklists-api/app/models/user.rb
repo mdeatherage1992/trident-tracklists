@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   validates_uniqueness_of :username
   has_secure_password
+  has_many :tracklists
   has_secure_token :auth_token
 
   def invalidate_token

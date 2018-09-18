@@ -8,7 +8,8 @@ class UsersController < ApiController
 
   def profile
     user = User.find_by_auth_token(request.headers[:token])
-    render json: {user: {username: user.username, email: user.email, name: user.name}}
+    user_tracklists = user.tracklists
+    render json: {user: {username: user.username, email: user.email, name: user.name, tracklists: user_tracklists}}
   end
 
   private
@@ -17,4 +18,4 @@ class UsersController < ApiController
     params.require(:user).permit(:username,:email,:password,:name)
   end
 
-end 
+end
