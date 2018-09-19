@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import Tracklists from './Tracklists';
 import './App.css';
 import './Tracklists.css';
-// import Auth from '../modules/Auth'
-//
-// import {BrowserRouter as Router,Link,Redirect, Route} from 'react-router-dom';
+import Header from '../component/Header';
+import Login from '../component/Signup';
+import Logout from '../component/Logout';
+
 
 // const tracklists = [
 //   {
@@ -24,13 +25,32 @@ import './Tracklists.css';
 
 
 class App extends Component {
+  componentDidMount(){
+    let that = this
+    axios.get('/users/check_for_user',{
+    })
+    .then(function(response){
+      if(response.data.email){
+        that.setState({
+          currentUser: response.data.email
+        })
+      } else {
+        that.setState({
+          currentUser: null
+        })
+      }
+    })
+    .catch(function(error){
+      console.log(error);
+    })
+  }
+updateCurrentUser(email) {
+    this.setState({
+      currentUser: email
+    })
+  }
 
-    // constructor() {
-    //   super();
-    //   this.state = {
-    //     auth: Auth.isUserAuthenticated(),
-    //   }
-    // }
+
 
   render () {
     return (
@@ -41,25 +61,24 @@ class App extends Component {
       // </Router>
     );
   }
+
+
 }
 
 export default App;
 
-// var collection = {
-//   tracklists: [
-//
-//   ],
-//   tracklistFormData: [
-//     {
-//       title:
-//       url:
-//       genre:
-//       tracklist:
-//     }
-//   ],
-//   currentTracklist: {
-//
-//   }
+
+
+
+// render () {
+//   return (
+//     // <Router>
+//     <div className="App">
+//     <Tracklists />
+//     </div>
+//     // </Router>
+//   );
+// }
 // }
 
 

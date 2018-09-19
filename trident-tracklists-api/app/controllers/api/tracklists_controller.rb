@@ -1,6 +1,7 @@
 class Api::TracklistsController < ApplicationController
 before_action :set_tracklist, only: [:show,:edit,:destroy]
-# before_action :require_login, except: [:index,:show]
+# before_action :authenticate_user
+# before_action :set_banana, only: [:show, :update, :destroy]
   def index
     render json: Tracklist.all
   end

@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+
+  devise_for :users
 namespace :api do
 resources :tracklists
 end
 
-# post '/login' => "sessions#create"
-# delete '/logout' => "sessions#destroy"
-# get '/profile' => 'users#profile'
-# resources :users
+scope '/api' do
+  resources :tracklists
+post 'user_token' => 'user_token#create'
+end
 
 end
