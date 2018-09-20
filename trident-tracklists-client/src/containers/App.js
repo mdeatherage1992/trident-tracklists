@@ -19,7 +19,7 @@ class App extends Component {
         <SideNavBar />
         <Switch>
           <Route exact path= '/index' component={Home} />
-          <Route exact path='/tracklists/new'component={Form}/>
+          <Route exact path='/tracklist/new'component={Form}/>
         </Switch>
       </div>
     </Router>

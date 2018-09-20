@@ -7,7 +7,6 @@ import {getTracklists} from '../actions/tracklists';
 class Tracklists extends Component {
 
 componentDidMount() {
-  debugger;
   this.props.getTracklists()
 }
 
@@ -19,7 +18,7 @@ componentDidMount() {
 {this.props.tracklists.map(tracklist =>
   <TracklistCard key={tracklist.id}tracklist={tracklist} />)}
 
-    <TracklistForm />
+    
 </div>
     );
   }
