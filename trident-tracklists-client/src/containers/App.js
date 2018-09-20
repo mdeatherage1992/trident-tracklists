@@ -7,25 +7,26 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import SideNavBar from '../component/nav/SideNavBar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import TracklistForm from './TracklistForm'
-import Home from './Tracklists'
-
+import Home from './Home'
+import Form from './Form'
 
 class App extends Component {
   render () {
     return (
       <div>
-      <div className="App">
-      </div>
-
       <Router>
       <div className='overflow'>
         <SideNavBar />
         <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/tracklists/new' component={TracklistForm} />
+          <Route exact path= '/index' component={Home} />
+          <Route exact path='/tracklists/new'component={Form}/>
         </Switch>
       </div>
     </Router>
+
+    <div className="App">
+    <Tracklists />
+    </div>
     </div>
 
     );

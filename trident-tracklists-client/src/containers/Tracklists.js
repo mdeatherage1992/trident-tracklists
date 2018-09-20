@@ -19,7 +19,7 @@ componentDidMount() {
 {this.props.tracklists.map(tracklist =>
   <TracklistCard key={tracklist.id}tracklist={tracklist} />)}
 
-  <TracklistForm />
+    <TracklistForm />
 </div>
     );
   }
