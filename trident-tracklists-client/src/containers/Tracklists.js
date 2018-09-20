@@ -7,6 +7,7 @@ import {getTracklists} from '../actions/tracklists';
 class Tracklists extends Component {
 
 componentDidMount() {
+  debugger;
   this.props.getTracklists()
 }
 

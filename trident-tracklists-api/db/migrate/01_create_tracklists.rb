@@ -5,6 +5,8 @@ class CreateTracklists < ActiveRecord::Migration[5.2]
       t.string :url
       t.string :genre
       t.text :tracklist
+      t.integer :user_id
+      t.index :user_id
       t.timestamps
     end
   end

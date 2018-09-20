@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 2018_09_19_135157) do
     t.string "url"
     t.string "genre"
     t.text "tracklist"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_tracklists_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
