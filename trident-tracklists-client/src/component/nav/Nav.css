@@ -1,0 +1,22 @@
+.mySidenav {
+  position: center;
+  font-family: 'Monoton';
+}
+
+.mySidenav a {
+  /* padding: 10px 5px 10px 5px; */
+  display: inline;
+  text-decoration: none;
+  text-align: center;
+  font-size: 30px;
+  color: #61dafb;
+}
+
+.mySidenav a:hover {
+  color: #fff;
+}
+
+.contentBox {
+  float: right;
+  margin-top: 20px;
+}

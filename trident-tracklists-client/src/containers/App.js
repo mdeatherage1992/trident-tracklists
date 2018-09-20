@@ -2,20 +2,32 @@ import React, {Component} from 'react';
 import Tracklists from './Tracklists';
 import './App.css';
 import './Tracklists.css';
-
-
+import injectTapEventPlugin from 'react-tap-event-plugin';
+// import Loginscreen from './Loginscreen';
+import SideNavBar from '../component/nav/SideNavBar';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import TracklistForm from './TracklistForm'
+import Home from './Tracklists'
 
 
 class App extends Component {
-
-
   render () {
     return (
-      // <Router>
+      <div>
       <div className="App">
-      <Tracklists />
       </div>
-      // </Router>
+
+      <Router>
+      <div className='overflow'>
+        <SideNavBar />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/tracklists/new' component={TracklistForm} />
+        </Switch>
+      </div>
+    </Router>
+    </div>
+
     );
   }
 
@@ -23,22 +35,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-
-// render () {
-//   return (
-//     // <Router>
-//     <div className="App">
-//     <Tracklists />
-//     </div>
-//     // </Router>
-//   );
-// }
-// }
-
-
-// fetch('http://localhost:3001/api/tracklists')
-// .then(response => response.json())
-// // .then(tracklists => this.setState({tracklists}))
