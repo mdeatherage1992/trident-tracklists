@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import './Tracklists.css';
 import TracklistCard from '../component/TracklistCard';
-import TracklistForm from './TracklistForm';
+// import TracklistForm from './TracklistForm';
 import {getTracklists} from '../actions/tracklists';
 class Tracklists extends Component {
 
@@ -18,7 +18,7 @@ componentDidMount() {
 {this.props.tracklists.map(tracklist =>
   <TracklistCard key={tracklist.id}tracklist={tracklist} />)}
 
-    
+
 </div>
     );
   }
