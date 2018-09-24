@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home'
 import Form from './Form';
+import Popular from './Popular';
 
 import WelcomeBar from './WelcomeBar';
 
@@ -23,6 +24,7 @@ class Welcome extends Component {
   <WelcomeBar />
     <Switch>
       <Route exact path= '/tracklists' component={Home} />
+      <Route exact path= '/tracklists/popular' component={Popular} />
       <Route exact path='/tracklist/new'component={Form}/>
     </Switch>
   </div>

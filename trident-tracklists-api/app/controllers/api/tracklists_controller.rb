@@ -6,6 +6,10 @@ before_action :set_tracklist, only: [:show,:edit,:destroy]
     render json: Tracklist.all
   end
 
+  def popular
+    render json: Tracklist.all
+  end
+
   def create
     tracklist = Tracklist.new(tracklist_params)
     if tracklist.save

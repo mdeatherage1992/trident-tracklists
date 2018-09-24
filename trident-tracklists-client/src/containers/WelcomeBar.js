@@ -11,7 +11,8 @@ const WelcomeBar = () => {
     <div>
       <ul>
         <Link to='/tracklists'>Home</Link><br />
-        <Link to='/tracklist/new'>New Tracklist</Link>
+        <Link to='/tracklist/new'>New Tracklist</Link><br />
+        <Link to='/tracklists/popular'>Our Weekly Pick</Link><br />
       </ul>
       </div>
 
