@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import TracklistForm from './TracklistForm';
 
-class Form extends Component {
+const Form = (props) => {
 
-  render () {
     return (
       <div>
   <TracklistForm />
 </div>
     );
-  }
 }
 
 export default Form;
+
+//change to functional component which dont have lifecycle methods

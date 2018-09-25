@@ -14,12 +14,12 @@ import Welcome from './Welcome';
 class App extends Component {
   render () {
     return (
-      <div>
+      <React.Fragment>
 
     <div className="App">
     <Welcome />
     </div>
-    </div>
+    </React.Fragment>
 
     );
   }

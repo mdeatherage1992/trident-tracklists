@@ -14,7 +14,7 @@ componentDidMount() {
   render () {
     return (
 <div className="TracklistsContainer">
-<h1> Tracklists</h1>
+<h1> Our Top Tracklist Pick</h1>
 {this.props.tracklists.slice(0,1).map(tracklist =>
   <TracklistCard key={tracklist.id}tracklist={tracklist} />)}
 
