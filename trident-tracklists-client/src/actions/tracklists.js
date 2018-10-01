@@ -13,6 +13,13 @@ const addTracklist = tracklist => {
   }
 }
 
+// const addLike = like => {
+//   return {
+//     type: 'CREATE_LIKE_SUCCESS',
+//     like
+//   }
+// }
+
 export const getTracklists = () => {
   return dispatch => {
     return fetch('http://localhost:3001/api/tracklists')
@@ -24,7 +31,7 @@ export const getTracklists = () => {
 
 export const createTracklist = tracklist => {
   return dispatch => {
-    return fetch('http://localhost:3001/api/tracklists', {
+    let test = fetch('http://localhost:3001/api/tracklists', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -40,3 +47,21 @@ export const createTracklist = tracklist => {
     .catch(err => console.log(err))
   }
 }
+
+// export const addLikes = likes => {
+//   return dispatch => {
+//     let test = fetch('http://localhost:3001/api/tracklists/likes', {
+//       method: 'POST',
+//       headers: {
+//         'Accept': 'application/json',
+//         'Content-Type': 'application/json'
+//       },
+//       body: JSON.stringify({like: like })
+//     })
+//     .then(response => response.json())
+//     .then(like => {
+//       dispatch(addLikes(like))
+//     })
+//     .catch(err => console.log(err))
+//   }
+// }

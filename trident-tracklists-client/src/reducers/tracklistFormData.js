@@ -2,7 +2,8 @@ const initialState = {
   title: '',
   url: '',
   genre: '',
-  tracklist: ''
+  tracklist: '',
+  likes: ''
   }
 
 export default(state = initialState, action) => {
