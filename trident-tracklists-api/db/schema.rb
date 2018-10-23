@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 2018_09_19_135157) do
     t.string "genre"
     t.text "tracklist"
     t.integer "user_id"
+    t.integer "likes", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "likes"
     t.index ["user_id"], name: "index_tracklists_on_user_id"
   end
 

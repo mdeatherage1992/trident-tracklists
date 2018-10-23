@@ -11,6 +11,7 @@ export default(state = initialState, action) => {
     case 'UPDATED_DATA':
     return action.tracklistFormData;
 
+
     case 'RESET_TRACKLIST_FORM':
       return initialState;
 

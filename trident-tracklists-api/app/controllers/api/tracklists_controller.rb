@@ -1,5 +1,5 @@
 class Api::TracklistsController < ApplicationController
-before_action :set_tracklist, only: [:show,:edit,:destroy]
+before_action :set_tracklist, only: [:show,:edit,:destroy,:update]
 # before_action :authenticate_user
 # before_action :set_banana, only: [:show, :update, :destroy]
   def index
@@ -10,7 +10,7 @@ before_action :set_tracklist, only: [:show,:edit,:destroy]
     render json: Tracklist.all
   end
 
-  
+
   def create
     tracklist = Tracklist.new(tracklist_params)
     if tracklist.save
@@ -22,6 +22,7 @@ end
 
 def update
   if @tracklist.update(tracklist_params)
+    @tracklist.save
     render json: @tracklist
   else
     render json: {message: tracklist.errors}, status: 400
@@ -44,9 +45,9 @@ end
 private
 
 def set_tracklist
-  @tracklist = Tracklist.find_by(params[:id])
+  @tracklist = Tracklist.find(params[:id])
 end
 
 def tracklist_params
-params.require(:tracklist).permit(:title,:url,:genre,:tracklist)
+params.require(:tracklist).permit(:title,:url,:genre,:tracklist,:likes)
 end

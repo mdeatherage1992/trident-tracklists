@@ -1,4 +1,5 @@
 import {resetTracklistForm} from './tracklistForm';
+import {updateTracklistFormData} from './tracklistForm';
 const setTracklists = tracklists => {
   return {
     type: 'GET_TRACKLISTS_SUCCESS',
@@ -13,12 +14,7 @@ const addTracklist = tracklist => {
   }
 }
 
-// const addLike = like => {
-//   return {
-//     type: 'CREATE_LIKE_SUCCESS',
-//     like
-//   }
-// }
+
 
 export const getTracklists = () => {
   return dispatch => {
@@ -47,21 +43,3 @@ export const createTracklist = tracklist => {
     .catch(err => console.log(err))
   }
 }
-
-// export const addLikes = likes => {
-//   return dispatch => {
-//     let test = fetch('http://localhost:3001/api/tracklists/likes', {
-//       method: 'POST',
-//       headers: {
-//         'Accept': 'application/json',
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify({like: like })
-//     })
-//     .then(response => response.json())
-//     .then(like => {
-//       dispatch(addLikes(like))
-//     })
-//     .catch(err => console.log(err))
-//   }
-// }

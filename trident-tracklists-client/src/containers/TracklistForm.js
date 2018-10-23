@@ -21,7 +21,7 @@ class TracklistForm extends Component {
 
 
   render() {
-    const {title,url,genre,tracklist} = this.props.tracklistFormData
+    const {title,url,genre,tracklist,likes} = this.props.tracklistFormData
     return (
       <div>
       Add a Tracklist
@@ -66,6 +66,14 @@ class TracklistForm extends Component {
         name="tracklist"
         value={tracklist}
         />
+        <br />
+        <label htmlFor="likes">Likes:</label>
+        <input
+          type="text"
+          onChange = {this.handleOnChange}
+          name="likes"
+          value={likes}
+          />
 
         </div>
         <button type="submit">Add Tracklist</button>

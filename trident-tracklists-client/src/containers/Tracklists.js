@@ -14,7 +14,7 @@ componentDidMount() {
   render () {
     return (
 <div className="TracklistsContainer">
-<h1> Tracklists</h1>
+<h1>Tracklists</h1>
 {this.props.tracklists.map(tracklist =>
   <TracklistCard key={tracklist.id}tracklist={tracklist} />)}
 

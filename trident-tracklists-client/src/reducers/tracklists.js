@@ -6,8 +6,9 @@ export default (state = [], action) => {
     case 'CREATE_TRACKLIST_SUCCESS':
     return state.concat(action.tracklist)
 
-    // case 'CREATE_LIKE_SUCCESS':
-    //   return action.likes;
+    // case 'UPDATE_TRACKLIST_DATA':
+    // return action.tracklists;
+
 
     default:
     return state;
