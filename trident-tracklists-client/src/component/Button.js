@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 import './Like.css';
+
 class Button extends Component {
+
 
 constructor(props) {
 super(props);
 this.state = {
-  tracklist: {
-  title: this.props.title,
-  url: this.props.url,
-  genre: this.props.genre,
-  tracklist: this.props.tracklist,
-  likes: this.props.counter
-    }
+  counter: this.props.counter,
+  clickable: true
   }
 }
 
-  handleSubmit = event => {
-  event.preventDefault()
+
+
+
+  handleSubmit = () => {
   fetch(`http://localhost:3001/api/tracklists/${this.props.id}`, {
     method: 'PATCH',
     headers: {
@@ -28,25 +27,29 @@ this.state = {
       url:this.props.url,
       genre:this.props.genre,
       tracklist: this.props.tracklist,
-      likes: this.props.counter + 1
+      likes: this.state.counter + 1
     }})
   })
   .then(response => response.json())
-  this.setState({
-  likes: this.state.likes + 1
-  })
+  .then(response => {
+    this.setState({
+      counter: this.state.counter + 1,
+      });
+    });
 }
+
+
+
 
   render() {
     return (
-      <div className="customContainer">
-      <button onClick={this.handleSubmit}>
-      {this.props.counter}
+      <div id="clickLike" className="customContainer">
+      <button onClick={this.handleSubmit.bind(this)}>
+      {this.state.counter}
       </button>
       </div>
     )
   }
-
 }
 
 
